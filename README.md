@@ -11,7 +11,7 @@ A chrome extension made for people who want to export chat logs from discord cha
 - Supports Date range selection.
 
 #How it works to Export Discord Chat Log?
-1. Install the extension.
+1. Install the extension[https://github.com/SaveMyDayApp/Discord-Chat-Exporter/archive/refs/tags/1.0.7.zip].
 2. Open a discord channel. (Discord url example:https://discord.com/channels/xxx/xxx)
 3. Click the extension icon on the top right corner,then click 'Export Chat'.
 
