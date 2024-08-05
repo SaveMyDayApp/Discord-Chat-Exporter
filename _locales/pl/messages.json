@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "Opis rozszerzenia",
+    "message": "Eksportuj polubienia na Instagramie do pliku Excel za darmo. Eksportuj polubienia postów na Instagramie."
+  },
+  "extName": {
+    "description": "Nazwa rozszerzenia",
+    "message": "DiscordExport - Eksport polubień na Instagramie"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "Ang paglalarawan ng extension",
+    "message": "I-export ang mga paborito sa Instagram sa excel nang libre. I-export ang mga paborito sa mga post sa Instagram."
+  },
+  "extName": {
+    "description": "Ang pangalan ng extension",
+    "message": "DiscordExport - I-export ang mga Paborito sa Instagram"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "拡張機能の説明",
+    "message": "Instagramのいいねを無料でExcelにエクスポートします。Instagramの投稿のいいねをエクスポートします。"
+  },
+  "extName": {
+    "description": "拡張機能の名前",
+    "message": "DiscordExport - Instagramのいいねをエクスポート"
+  }
+}

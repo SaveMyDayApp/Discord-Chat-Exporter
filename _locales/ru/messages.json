@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "Описание расширения",
+    "message": "Экспорт лайков Instagram в Excel бесплатно. Экспорт лайков к постам Instagram."
+  },
+  "extName": {
+    "description": "Название расширения",
+    "message": "DiscordExport - Экспорт лайков Instagram"
+  }
+}

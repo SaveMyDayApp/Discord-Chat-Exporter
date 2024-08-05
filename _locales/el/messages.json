@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "Η περιγραφή της επέκτασης",
+    "message": "Εξαγωγή δωρεάν των αρέσεων στο Instagram σε μορφή Excel. Εξαγωγή αρέσεων σε αναρτήσεις στο Instagram."
+  },
+  "extName": {
+    "description": "Το όνομα της επέκτασης",
+    "message": "DiscordExport - Εξαγωγή Αρέσεων Instagram"
+  }
+}

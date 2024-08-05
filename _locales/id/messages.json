@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "Deskripsi dari ekstensi",
+    "message": "Ekspor suka Instagram ke excel secara gratis. Ekspor suka postingan Instagram."
+  },
+  "extName": {
+    "description": "Nama dari ekstensi",
+    "message": "DiscordExport - Ekspor Suka Instagram"
+  }
+}

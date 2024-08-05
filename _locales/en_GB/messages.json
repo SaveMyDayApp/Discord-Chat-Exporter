@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "The description of the extension",
+    "message": "Discord Chat Export to Excel for free. Export Instagram post likes."
+  },
+  "extName": {
+    "description": "The name of the extension",
+    "message": "DiscordExport - Discord Chat Export"
+  }
+}

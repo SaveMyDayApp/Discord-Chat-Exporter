@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "Mô tả về tiện ích mở rộng",
+    "message": "Xuất lượt thích trên Instagram sang Excel miễn phí. Xuất lượt thích bài viết trên Instagram."
+  },
+  "extName": {
+    "description": "Tên của tiện ích mở rộng",
+    "message": "DiscordExport - Xuất lượt thích trên Instagram"
+  }
+}

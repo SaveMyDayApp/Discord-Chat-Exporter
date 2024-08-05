@@ -1,0 +1,1 @@
+import{a as n}from"./index.6dc802d2.js";import"./vendor.9ed9cc35.js";chrome.runtime.onMessage.addListener(function(t,o,i){t.method=="GET_CONFIG"&&n().then(e=>{i({profile:e.profile,setting:e.setting,cache:e.cache})})});

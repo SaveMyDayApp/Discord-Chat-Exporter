@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "Popis rozšírenia",
+    "message": "Exportujte Instagramové lajky do Excelu zdarma. Exportujte lajky k príspevkom na Instagrame."
+  },
+  "extName": {
+    "description": "Názov rozšírenia",
+    "message": "DiscordExport - Export Instagramových Lajkov"
+  }
+}

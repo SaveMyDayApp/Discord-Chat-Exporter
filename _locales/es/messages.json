@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "La descripción de la extensión",
+    "message": "Exporta los me gusta de Instagram a Excel de forma gratuita. Exporta los me gusta de las publicaciones de Instagram."
+  },
+  "extName": {
+    "description": "El nombre de la extensión",
+    "message": "DiscordExport - Exportar Me Gusta de Instagram"
+  }
+}

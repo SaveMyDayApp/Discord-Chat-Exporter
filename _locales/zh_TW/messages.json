@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "擴充功能的描述",
+    "message": "免費將 Instagram 讚好匯出至 Excel。匯出 Instagram 文章讚好。"
+  },
+  "extName": {
+    "description": "擴充功能的名稱",
+    "message": "DiscordExport - 匯出 Instagram 讚好"
+  }
+}

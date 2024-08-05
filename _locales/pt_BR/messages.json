@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "A descrição da extensão",
+    "message": "Exporte curtidas do Instagram para o Excel gratuitamente. Exporte curtidas em postagens do Instagram."
+  },
+  "extName": {
+    "description": "O nome da extensão",
+    "message": "DiscordExport - Exportar Curtidas do Instagram"
+  }
+}

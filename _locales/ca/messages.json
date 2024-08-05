@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "La descripció de l'extensió",
+    "message": "Exporta els m'agrada d'Instagram a Excel de forma gratuïta. Exporta els m'agrada de les publicacions d'Instagram."
+  },
+  "extName": {
+    "description": "El nom de l'extensió",
+    "message": "DiscordExport - Exporta els M'agrada d'Instagram"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "Описанието на разширението",
+    "message": "Експортирайте харесванията в Instagram в Excel безплатно. Експортирайте харесванията на публикации в Instagram."
+  },
+  "extName": {
+    "description": "Името на разширението",
+    "message": "DiscordExport - Експорт на харесвания в Instagram"
+  }
+}

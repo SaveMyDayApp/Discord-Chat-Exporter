@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        img {
+            object-fit: contain;
+        }
+        
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+            font-weight: 300;
+        }
+        
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+            font-weight: 400;
+        }
+        
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+            font-weight: 500;
+        }
+        
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+            font-weight: 600;
+        }
+        
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+            font-weight: 700;
+        }
+        
+        body {
+            font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 17px;
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+        
+        .messages-list-container {
+            padding: 5px;
+        }
+        
+        .message-avatar {
+            margin-right: 20px;
+        }
+        
+        .message-box {
+            border-top: 1px solid #bdbdbd;
+            padding: 5px;
+            display: flex;
+            justify-content: start;
+            align-items: start;
+        }
+        
+        .message-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+        }
+        
+        .message-date {
+            color: #616161;
+            font-size: 12px;
+            font-weight: 300;
+        }
+        
+        .message-author {
+            color: #212121;
+            font-size: 15px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+        
+        .message-content {
+            color: #212121;
+            font-size: 16px;
+            margin-top: 10px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        
+        .message-embeded {
+            display: flex;
+            justify-content: start;
+            /* align-items: stretch; */
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        
+        .embed-text {
+            font-size: 15px;
+            color: #212121;
+        }
+        
+        .embed-description {
+            font-size: 13px;
+            color: #424242;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- top bar -->
+    <div>
+        <h1 id="chatlogs-title" class="top-bar">
+            <img id="server-icon" src="" />
+        </h1>
+    </div>
+
+    <!-- messages list -->
+    <div class="messages-list-container" id="chatlogs-message-list-container"></div>
+</body>
+
+<script>
+    function get_avatar_url(author_id, avatar) {
+        if (!avatar) {
+            return 'https://discord.com/assets/6debd47ed13483642cf09e832ed0bc1b.png';
+        }
+
+        if (avatar.indexOf('a_') == 0) {
+            //gif
+            return `https://cdn.discordapp.com/avatars/${author_id}/${avatar}.gif`;
+        }
+        return `https://cdn.discordapp.com/avatars/${author_id}/${avatar}.png`;
+    }
+
+    let title = 'CHAT_EXPORT_TITLE';
+    let messages = CHAT_EXPORT_DATA;
+
+    document.querySelector('#server-icon').src = 'CHAT_SERVER_ICON';
+
+    let msg_list_container = document.querySelector('#chatlogs-message-list-container');
+    messages.forEach(elmt => {
+        let message_box = document.createElement('div');
+        message_box.classList.add('message-box');
+
+        let img_avatar = document.createElement('img');
+        img_avatar.classList.add('message-avatar');
+        img_avatar.width = '64';
+        img_avatar.height = '64';
+        img_avatar.src = get_avatar_url(elmt.author.id, elmt.author.avatar);
+        message_box.appendChild(img_avatar);
+
+        //message-body
+        let message_body = document.createElement('div');
+        message_body.classList.add('message-body');
+        //message-meta
+        let message_meta = document.createElement('div');
+        message_meta.classList.add('message-meta');
+        let message_author = document.createElement('span');
+        message_author.classList.add('message-author');
+        message_author.innerText = elmt.author.username + '#' + elmt.author.discriminator;
+        let message_date = document.createElement('span');
+        message_date.classList.add('message-date');
+        let day = new Date(elmt.timestamp);
+        message_date.innerText = `${day.toLocaleDateString()} ${day.toLocaleTimeString()}`;
+        message_meta.appendChild(message_author);
+        message_meta.appendChild(message_date);
+        message_body.appendChild(message_meta);
+        message_box.appendChild(message_body);
+
+        //message-content
+        let message_content = document.createElement('div');
+        message_content.classList.add('message-content');
+        let span_content = document.createElement('span');
+        span_content.innerText = elmt.content;
+        message_content.appendChild(span_content);
+        message_body.appendChild(message_content);
+
+        //message-embeded
+        let message_embed = document.createElement('div');
+        message_embed.classList.add('message-embeded');
+        elmt.embeds.forEach(embed_elmt => {
+            let embed_container = document.createElement('div');
+            embed_container.classList.add('embed-container');
+            message_embed.appendChild(embed_container);
+
+            if (embed_elmt.title) {
+                let embed_text = document.createElement('div');
+                embed_text.classList.add('embed-text');
+                embed_text.innerText = embed_elmt.title;
+                embed_container.appendChild(embed_text);
+            }
+
+            if (embed_elmt.description) {
+                let embed_desc = document.createElement('div');
+                embed_desc.classList.add('embed-description');
+                embed_desc.innerText = embed_elmt.description;
+                embed_container.appendChild(embed_desc);
+            }
+
+            let embed_thumbnail = document.createElement('div');
+            embed_thumbnail.classList.add('embed-thumbnail');
+            let link = document.createElement('a');
+            link.target = '_blank';
+            if (embed_elmt.video) {
+                link.href = embed_elmt.video.url;
+            } else if (embed_elmt.image) {
+                link.href = embed_elmt.image.url;
+            }
+
+            if (embed_elmt.thumbnail && embed_elmt.thumbnail.url) {
+                let img_link = document.createElement('img');
+                img_link.src = embed_elmt.thumbnail.url;
+                link.appendChild(img_link);
+                embed_thumbnail.appendChild(link);
+                embed_container.appendChild(embed_thumbnail);
+            }
+
+            message_body.appendChild(message_embed);
+        });
+
+        //attachments
+        let message_attach = document.createElement('div');
+        elmt.attachments.forEach(attach_elmt => {
+            let attach_container = document.createElement('div');
+            attach_container.classList.add('attach-container');
+            message_attach.appendChild(attach_container);
+            console.log(attach_elmt.url)
+            let link = document.createElement('a');
+            link.target = '_blank';
+            if (['image/png', 'image/jpg', 'image/jpeg', 'image/gif'].includes(attach_elmt.content_type)) {
+                let img_link = document.createElement('img');
+                img_link.src = attach_elmt.url;
+
+                link.appendChild(img_link);
+                attach_container.appendChild(link);
+            }else if (attach_elmt.url.endsWith('.pdf')
+            || attach_elmt.url.endsWith('.pptx') 
+            || attach_elmt.url.endsWith('.xlsx') 
+            || attach_elmt.url.endsWith('.doc') 
+            || attach_elmt.url.endsWith('.docx') 
+            || attach_elmt.url.endsWith('.xls') 
+            || attach_elmt.url.endsWith('.csv') 
+            || attach_elmt.url.endsWith('.ppt') 
+            || attach_elmt.url.endsWith('.txt') ) {
+                let pdf_container = document.createElement('div');
+                pdf_container.classList.add('pdf-container');
+                attach_container.appendChild(pdf_container);
+
+                let pdf_title = document.createElement('p');
+                pdf_title.innerHTML = attach_elmt.filename;
+                pdf_title.classList.add('pdf-title');
+                pdf_container.appendChild(pdf_title);
+
+                let pdf_link = document.createElement('a');
+                pdf_link.href = attach_elmt.url;
+                pdf_link.target = '_blank';
+                pdf_link.innerHTML = 'Download ' + attach_elmt.filename;
+                pdf_container.appendChild(pdf_link);
+            }
+
+            message_body.appendChild(message_attach);
+        });
+
+
+        msg_list_container.appendChild(message_box);
+    });
+</script>
+
+</html>

@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "Beskrivelsen af udvidelsen",
+    "message": "Eksporter Instagram-likes til Excel gratis. Eksporter Instagram-indlægs-likes."
+  },
+  "extName": {
+    "description": "Navnet på udvidelsen",
+    "message": "DiscordExport - Eksporter Instagram-likes"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "Laienduse kirjeldus",
+    "message": "Ekspordi Instagrami meeldimised tasuta Excelisse. Ekspordi Instagrami postituste meeldimised."
+  },
+  "extName": {
+    "description": "Laienduse nimi",
+    "message": "DiscordExport - Ekspordi Instagrami meeldimised"
+  }
+}

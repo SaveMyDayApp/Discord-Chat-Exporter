@@ -1,0 +1,10 @@
+{
+  "extDescription": {
+    "description": "扩展描述",
+    "message": "免费将 Instagram 点赞导出到 Excel。导出 Instagram 帖子点赞。"
+  },
+  "extName": {
+    "description": "扩展名称",
+    "message": "DiscordExport - 导出 Instagram 点赞"
+  }
+}
